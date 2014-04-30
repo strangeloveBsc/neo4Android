@@ -1,4 +1,4 @@
-neo4Android
+Neo4Android
 ===========
 
 Taking up the long and not-as-boring task of porting the NEO2-Layout to (rooted) Android devices
@@ -9,7 +9,7 @@ gradually.
 I fear it's not possible to include all the fancy things NEO2 can do in this limited approach but let's see how far we get!
 
 
-manual
+Manual
 ======
 
 1) copy Generic.kl to /system/usr/keylayout/ and Generic.kcm to /system/usr/keychars
@@ -18,7 +18,7 @@ manual
 4) Profit!
 
 
-version history
+Version history
 ======
 
 Version 0.1: Supports the regular layer-1 and layer-3 keys, special chars for layer-2 are missing, layer-4-6 is unsupported.
