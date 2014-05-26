@@ -16,138 +16,169 @@
 # Emulator keyboard character map #2.
 #
 
-# Mods by Michael "λ" Lamberty
-# TODO: Clean up capslock+alt
-# TODO: Create Mod4-Mappings on ctrl
-# TODO: find out if it's possible to create the effects of capslock
-
 type ALPHA
+
+### Note to self: alt = M3, ctrl = M4
+
+# base 				= layer 1
+# shift, capslock 	= layer 2
+# alt 				= layer 3
+# ctrl 				= layer 4
+# shift+ctrl		= layer 5
+# alt+ctrl			= layer 6
 
 key A {
     label:                              'A'
     number:                             '6'
-    base:                               'a'
-    shift, capslock:                    'A'
-    alt:                                '{'
-    ctrl:				none
-    shift+alt, capslock+alt:            none
+    base:                               'a'   
+	shift, capslock:                    'A'   # layer 2
+    alt:                                '{'   # layer 3
+    ctrl:								fallback DPAD_DOWN  # arrow down
+    shift+ctrl:							'\u03B1'  # alpha
+    ctrl+alt:							'\u2200'  # for all
 }
 
 key B {
     label:                              'B'
-    number:                             '2'
+    number:                             none
     base:                               'b'
     shift, capslock:                    'B'
     alt:                                '+'
-    shift+alt, capslock+alt:            none
+	ctrl:								':' 
+    shift+ctrl:							'\u03B2'  # beta
+    ctrl+alt:							'\u21D0'  # <=
 }
 
 key C {
     label:                              'C'
-    number:                             '2'
+    number:                             none
     base:                               'c'
     shift, capslock:                    'C'
     alt:                                ']'
-    shift+alt, capslock+alt:            none
+	ctrl:								'\u007F' # delete
+    shift+ctrl:							'\u03C7'  # chi
+    ctrl+alt:							'\u2102'  # ℂ
 }
 
 key D {
     label:                              'D'
-    number:                             '3'
+    number:                             none
     base:                               'd'
     shift, capslock:                    'D'
     alt:                                ':'
-    shift+alt, capslock+alt:            none
+	ctrl:								',' 
+    shift+ctrl:							'\u03B4'  # delta
+    ctrl+alt:							'\u0394'  # Delta
 }
 
 key E {
     label:                              'E'
-    number:                             '3'
+    number:                             none
     base:                               'e'
     shift, capslock:                    'E'
     alt:                                '}'
-    shift+alt, capslock+alt:            '\u0301'
+	ctrl:								fallback DPAD_RIGHT
+	shift+ctrl:							'\u03B5'  # epsilon
+    ctrl+alt:							'\u2203'  # there exists
 }
 
 key F {
     label:                              'F'
-    number:                             '3'
+    number:                             '9'
     base:                               'f'
     shift, capslock:                    'F'
     alt:                                '='
-    shift+alt, capslock+alt:            '['
+    ctrl:								'9'
+    shift+ctrl:							'\u03C6'  # phi
+    ctrl+alt:							'\u03A6'  # Phi
 }
 
 key G {
     label:                              'G'
-    number:                             '4'
+    number:                             '8'
     base:                               'g'
     shift, capslock:                    'G'
     alt:                                '>'
-    shift+alt, capslock+alt:            ']'
+    ctrl:								'8'
+	shift+ctrl:							'\u03B3'  # gamma
+    ctrl+alt:							'\u0393'  # Gamma
 }
 
 key H {
     label:                              'H'
-    number:                             '4'
+    number:                             '7'
     base:                               'h'
     shift, capslock:                    'H'
     alt:                                '<'
-    shift+alt, capslock+alt:            '<'
+    ctrl:								'7'
+    shift+ctrl:							'\u03C8'  # psi
+    ctrl+alt:							'\u03A8'  # Psi
 }
 
 key I {
     label:                              'I'
-    number:                             '4'
+    number:                             '5'
     base:                               'i'
     shift, capslock:                    'I'
     alt:                                '/'
-    shift+alt, capslock+alt:            '\u0302'
+    ctrl:								fallback DPAD_LEFT
+    shift+ctrl:							'\u03B9'  # jota
+    ctrl+alt:							'\u222B'  # integral
 }
 
 key J {
     label:                              'J'
-    number:                             '5'
+    number:                             '0'
     base:                               'j'
     shift, capslock:                    'J'
     alt:                                ';'
-    shift+alt, capslock+alt:            '>'
+    ctrl: 								';'
+    shift+ctrl:							'\u03B8'  # theta
+    ctrl+alt:							'\u0398'  # Theta
 }
 
 key K {
     label:                              'K'
-    number:                             '5'
+    number:                             none
     base:                               'k'
     shift, capslock:                    'K'
     alt:                                '!'
-    shift+alt, capslock+alt:            '~'
+    ctrl: 								'\u00A1'
+    shift+ctrl:							'\u03BA'  # kappa
+    ctrl+alt:							'\u2A2F'  # cross product
 }
 
 key L {
     label:                              'L'
-    number:                             '5'
+    number:                             '9'
     base:                               'l'
     shift, capslock:                    'L'
     alt:                                '['
-    shift+alt, capslock+alt:            '`'
+    ctrl: 								fallback DPAD_UP
+    shift+ctrl:							'\u03BB'  # lambda
+    ctrl+alt:							'\u039B'  # Lambda
 }
 
 key M {
     label:                              'M'
-    number:                             '6'
+    number:                             '1'
     base:                               'm'
     shift, capslock:                    'M'
     alt:                                '%'
-    shift+alt, capslock+alt:            none
+    ctrl: 								'1'
+    shift+ctrl:							'\u03BC'  # mu
+    ctrl+alt:							'\u21D4'  # <=>
 }
 
 key N {
     label:                              'N'
-    number:                             '6'
+    number:                             '4'
     base:                               'n'
     shift, capslock:                    'N'
     alt:                                '('
-    shift+alt, capslock+alt:            '\u0303'
+    ctrl: 								'4'
+    shift+ctrl:							'\u03BD'  # nu
+    ctrl+alt:							'\u2115'  # Natural numbers
 }
 
 key O {
@@ -156,61 +187,75 @@ key O {
     base:                               'o'
     shift, capslock:                    'O'
     alt:                                '*'
-    shift+alt, capslock+alt:            '+'
+    ctrl: 								none
+    shift+ctrl:							'\u03BF'  # omicron
+    ctrl+alt:							'\u2208'  # Element of
 }
 
 key P {
     label:                              'P'
-    number:                             '7'
+    number:                             none
     base:                               'p'
     shift, capslock:                    'P'
     alt:                                '~'
-    shift+alt, capslock+alt:            '\u00a5'
+    ctrl: 								'\n' # line feed
+    shift+ctrl:							'\u03C0'  # pi
+    ctrl+alt:							'\u03A0'  # Pi
 }
 
 key Q {
     label:                              'Q'
-    number:                             '7'
+    number:                             none
     base:                               'q'
     shift, capslock:                    'Q'
     alt:                                '&'
-    shift+alt, capslock+alt:            '\u0300'
+    ctrl: 								'+'
+    shift+ctrl:							'\u03D5'  # phi
+    ctrl+alt:							'\u211A'  # Rational numbers
 }
 
 key R {
     label:                              'R'
-    number:                             '7'
+    number:                             '5'
     base:                               'r'
     shift, capslock:                    'R'
     alt:                                ')'
-    shift+alt, capslock+alt:            '\u20ac'
+    ctrl: 								'+'
+    shift+ctrl:							'\u03C1'  # rho
+    ctrl+alt:							'\u211D'  # Real numbers
 }
 
 key S {
     label:                              'S'
-    number:                             '7'
+    number:                             none
     base:                               's'
     shift, capslock:                    'S'
     alt:                                '?'
-    shift+alt, capslock+alt:            '\u00df'
+    ctrl: 								'\u00BF'  # inverted question mark
+    shift+ctrl:							'\u03C3'  # sigma
+    ctrl+alt:							'\u03A3'  # Sigma
 }
 
 key T {
     label:                              'T'
-    number:                             '8'
+    number:                             '6'
     base:                               't'
     shift, capslock:                    'T'
     alt:                                '-'
-    shift+alt, capslock+alt:            '\u00a3'
+    ctrl: 								'6'
+    shift+ctrl:							'\u03C4'  # tau
+    ctrl+alt:							'\u2202'  # part. differential
 }
 
 key U {
     label:                              'U'
-    number:                             '8'
+    number:                             '4'
     base:                               'u'
     shift, capslock:                    'U'
     alt:                                '\\'
-    shift+alt, capslock+alt:            '\u0308'
+    ctrl: 								none
+    shift+ctrl:							none
+    ctrl+alt:							'\u2282'  #  subset of
 }
 
 key V {
@@ -219,34 +264,42 @@ key V {
     base:                               'v'
     shift, capslock:                    'V'
     alt:                                '_'
-    shift+alt, capslock+alt:            'V'
+    ctrl: 								'\u0008'
+    shift+ctrl:							none
+    ctrl+alt:							'\u221A'  # Square root
 }
 
 key W {
     label:                              'W'
-    number:                             '9'
+    number:                             none
     base:                               'w'
     shift, capslock:                    'W'
     alt:                                '^'
-    shift+alt, capslock+alt:            '~'
+    ctrl: 								none
+    shift+ctrl:							'\u03C9'  # omega
+    ctrl+alt:							'\u03A9'  # Omega
 }
 
 key X {
     label:                              'X'
-    number:                             '9'
+    number:                             '7'
     base:                               'x'
     shift, capslock:                    'X'
     alt:                                '\u2026'
-    shift+alt, capslock+alt:            '\uef00'
+    ctrl: 								none
+    shift+ctrl:							'\u03BE'  # xi
+    ctrl+alt:							'\u039E'  # Xi
 }
 
 key Y {
     label:                              'Y'
-    number:                             '9'
+    number:                             none
     base:                               'y'
     shift, capslock:                    'Y'
     alt:                                '@'
-    shift+alt, capslock+alt:            '\u00a1'
+    ctrl: 								'.'
+    shift+ctrl:							'\u03C5'  # upsilon
+    ctrl+alt:							'\u25BD'  # white triangle down
 }
 
 key Z {
@@ -255,25 +308,31 @@ key Z {
     base:                               'z'
     shift, capslock:                    'Z'
     alt:                                '`'
-    shift+alt, capslock+alt:            'Z'
+    ctrl: 								none
+    shift+ctrl:							'\u03B6'  # zeta
+    ctrl+alt:							'\u2124'  # Integer
 }
 
 key COMMA {
     label:                              ','
-    number:                             ','
+    number:                             '2'
     base:                               ','
     shift:                              '\u2013'
     alt:                                '"'
-    shift+alt:                          ','
+    ctrl: 								'2'
+    shift+ctrl:							'\u03F1'  # rho
+    ctrl+alt:							'\u21D2'  # =>
 }
 
 key PERIOD {
     label:                              '.'
-    number:                             '.'
+    number:                             '3'
     base:                               '.'
     shift:                              '\u2022'
     alt:                                '\''
-    shift+alt:                          '\u2026'
+    ctrl: 								'3'
+    shift+ctrl:							'\u03D1'  # theta
+    ctrl+alt:							'\u21A6'  # |->
 }
 
 key AT {
@@ -282,7 +341,7 @@ key AT {
     base:                               '@'
     shift:                              '@'
     alt:                                '@'
-    shift+alt:                          '\u2022'
+# doesn't exist?
 }
 
 key SLASH {
@@ -291,7 +350,8 @@ key SLASH {
     base:                               '/'
     shift:                              '?'
     alt:                                '?'
-    shift+alt:                          '?'
+    ctrl: 								none
+# doesn't exist?
 }
 
 key SPACE {
@@ -300,7 +360,9 @@ key SPACE {
     base:                               ' '
     shift:                              ' '
     alt:                                '\uef01'
-    shift+alt:                          '\uef01'
+    ctrl: 								'0'
+    shift+ctrl:							'\u00A0'  # nbsp
+    ctrl+alt:							'\u202F'  # narrow nbsp
 }
 
 key ENTER {
@@ -309,123 +371,149 @@ key ENTER {
     base:                               '\n'
     shift:                              '\n'
     alt:                                '\n'
-    shift+alt:                          '\n'
+    ctrl: 								'\n'
+    shift+ctrl:							'\n'
+    ctrl+alt:							'\n'
 }
 
 key TAB {
     label:                              '\t'
     number:                             '\t'
     base:                               '\t'
-    shift:                              '\t'
-    alt:                                '\t'
-    shift+alt:                          '\t'
+    shift:                              '\u21E4'  # leftwards tab 
+    alt:                                '\u266B'  # beamt eight note
+    ctrl: 								'\t'
+    shift+ctrl:							'\t'
+    ctrl+alt:							'\t' 
 }
 
 key 0 {
     label:                              '0'
     number:                             '0'
     base:                               '0'
-    shift:                              ')'
-    alt:                                ')'
-    shift+alt:                          ')'
+    shift:                              '\u201D'  # r double quot mark
+    alt:                                '\u2019'  # r single quot mark
+    ctrl: 								'*'
+    shift+ctrl:							'\u2080'  # subscript zero
+    ctrl+alt:							'\u2205'  # empty set
 }
 
 key 1 {
     label:                              '1'
     number:                             '1'
     base:                               '1'
-    shift:                              '!'
-    alt:                                '!'
-    shift+alt:                          '!'
+    shift:                              '\u00B0'  # Degree
+    alt:                                '\u00B9'  # Superscript 1
+    ctrl: 								'\u00AA'  # Feminine ord. indicator
+    shift+ctrl:							'\u2081'  # Subscript one
+    ctrl+alt:							'\u00AC'  # NOT sign
 }
 
 key 2 {
     label:                              '2'
     number:                             '2'
     base:                               '2'
-    shift:                              '@'
-    alt:                                '@'
-    shift+alt:                          '@'
+    shift:                              '\u00A7'  # § section sign
+    alt:                                '\u00B2'  # Superscript 2
+    ctrl: 								'\u00BA'  # Masculine ord. indicator
+    shift+ctrl:							'\u2082'  # Subscript two
+    ctrl+alt:							'\u2228'  # OR sign
 }
 
 key 3 {
     label:                              '3'
     number:                             '3'
     base:                               '3'
-    shift:                              '#'
-    alt:                                '#'
-    shift+alt:                          '#'
+    shift:                              '\u2113'  # small script l
+    alt:                                '\u00B3'  # superscript 3
+    ctrl: 								'\u2116'  # Numero sign
+    shift+ctrl:							'\u2083'  # subscript 3
+    ctrl+alt:							'\u2227'  # AND sign
 }
 
 key 4 {
     label:                              '4'
     number:                             '4'
     base:                               '4'
-    shift:                              '$'
-    alt:                                '$'
-    shift+alt:                          '$'
+    shift:                              '\u00BB' # >>
+    alt:                                '\u203A' # >
+    ctrl: 								none
+    shift+ctrl:							'\u2640'  # female sign
+    ctrl+alt:							'\u22A5'  # up tack
 }
 
 key 5 {
     label:                              '5'
     number:                             '5'
     base:                               '5'
-    shift:                              '%'
-    alt:                                '%'
-    shift+alt:                          '%'
+    shift:                              '\u00AB'  # <<
+    alt:                                '\u2039'  # <
+    ctrl: 								'\u00B7'  # middle dot
+    shift+ctrl:							'\u2642'  # male sign
+    ctrl+alt:							'\u2221'  # Angle sign
 }
 
 key 6 {
     label:                              '6'
     number:                             '6'
     base:                               '6'
-    shift:                              '^'
-    alt:                                '^'
-    shift+alt:                          '^'
+    shift:                              '$'
+    alt:                                '\u002A'  # cent sign
+    ctrl: 								'\u00A3'  # pound sign
+    shift+ctrl:							'\u26A5'  # male + female sign
+    ctrl+alt:							'\u2225'  # parallel sign
 }
 
 key 7 {
     label:                              '7'
     number:                             '7'
     base:                               '7'
-    shift:                              '&'
-    alt:                                '&'
-    shift+alt:                          '&'
+    shift:                              '\u20AC'  # Euro sign
+    alt:                                '\u00A5'  # Yen sign
+    ctrl: 								'\u00A4'  # currency sign
+    shift+ctrl:							'\u03F0'  # kappa
+    ctrl+alt:							'\u2192'  # ->
 }
 
 key 8 {
     label:                              '8'
     number:                             '8'
     base:                               '8'
-    shift:                              '*'
-    alt:                                '*'
-    shift+alt:                          '*'
+    shift:                              '\u201E'  # double low quot
+    alt:                                '\u201A'  # single low quot
+    ctrl: 								'\t'
+    shift+ctrl:							'\u27E8'  # Left angle bracket
+    ctrl+alt:							'\u221E'  # Infinity sign
 }
 
 key 9 {
     label:                              '9'
     number:                             '9'
     base:                               '9'
-    shift:                              '('
-    alt:                                '('
-    shift+alt:                          '('
+    shift:                              '\u201C'  # Left double quot
+    alt:                                '\u2018'  # Left single quot
+    ctrl: 								'\u002F'  # Solidus
+    shift+ctrl:							'\u27E9'  # Right angle bracket
+    ctrl+alt:							'\u221D'  # Proportional sign
 }
 
 key GRAVE {
     label:                              '^'
     number:                             '^'
     base:                               '\u0302'
-    shift:                              '\u0303'
+    shift:                              '\u02C7'  # Caron
+    alt:								'\u21BB'  # Clockwise open circle arrow
+    ctrl: 								'\u02D9'  # Dot above
+    shift+ctrl:							'\u02DE'  # Rhotic hook
+    ctrl+alt:							'\u0323'  # Dot below
 }
 
 key MINUS {
-    label:                              'j'
+    label:                              '-'
     number:                             '-'
-    base:                               'j'
-    shift:                              'J'
-    alt:                                ';'
-    
-    shift+alt:                          '_'
+    base:                               '-'
+    shift:                              '-'
+
 }
 
 key EQUALS {
@@ -434,7 +522,6 @@ key EQUALS {
     base:                               '='
     shift:                              '+'
     alt:                                '='
-    shift+alt:                          '+'
 }
 
 key LEFT_BRACKET {
@@ -443,7 +530,6 @@ key LEFT_BRACKET {
     base:                               '['
     shift:                              '{'
     alt:                                '['
-    shift+alt:                          '{'
 }
 
 key RIGHT_BRACKET {
@@ -452,7 +538,6 @@ key RIGHT_BRACKET {
     base:                               ']'
     shift:                              '}'
     alt:                                ']'
-    shift+alt:                          '}'
 }
 
 key BACKSLASH {
@@ -461,7 +546,6 @@ key BACKSLASH {
     base:                               '\\'
     shift:                              '|'
     alt:                                '\\'
-    shift+alt:                          '|'
 }
 
 key SEMICOLON {
@@ -470,41 +554,46 @@ key SEMICOLON {
     base:                               ';'
     shift:                              ':'
     alt:                                ';'
-    shift+alt:                          ':'
 }
 
 key APOSTROPHE {
-    label:                              '\''
+    label:                              '`'
     number:                             '\''
-    base:                               '\''
-    shift:                              '"'
+    base:                               '\u0300'  # grave
+    shift:                              '\u0323'  # underdot
     alt:                                '\''
-    shift+alt:                          '"'
+ 
 }
 
+# all dead keys, I'll leave them alone…
 key STAR {
     label:                              '*'
     number:                             '*'
     base:                               '*'
     shift:                              '*'
-    alt:                                '*'
-    shift+alt:                          '*'
+    alt:                                '\u030A'  #  ̊a circle
+    ctrl:								'\u0337'  #  ̷o stroke
 }
 
+# dead because it's Meta3
 key POUND {
     label:                              '#'
     number:                             '#'
     base:                               '#'
     shift:                              '#'
     alt:                                '#'
-    shift+alt:                          '#'
+    ctrl: 								none
+    shift+ctrl:							'\u03B6'  # zeta
+    ctrl+alt:							'\u2124'  # Integer
 }
 
 key PLUS {
-    label:                              '+'
+    label:                              '\''
     number:                             '+'
-    base:                               '+'
-    shift:                              '+'
+    base:                               '\u0301'  # acute
+    shift:                              '\u0303'  # tilde
     alt:                                '+'
-    shift+alt:                          '+'
+    ctrl: 								none
+    shift+ctrl:							'\u03B6'  # zeta
+    ctrl+alt:							'\u2124'  # Integer
 }
